@@ -1,5 +1,5 @@
 library(shiny)
-library(shinydashboard)
+library(semantic.dashboard)
 library(shinyjs)
 library(DT)
 library(foreign)
