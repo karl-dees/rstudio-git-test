@@ -1,16 +1,10 @@
 server <- function(input, output, session) { 
   output$ibox <- renderInfoBox({infoBox("Title",input$count,icon = icon("credit-card"))})
   output$vbox <- renderValueBox({valueBox("Title",input$count, icon = icon("credit-card"))})
-observe({print(input$tabs)})
-observe({print(input$choice)})
-observe({print(input$bichoice)})
-observe({print(input$bislider)})
-observe({print(input$slider)})
-observe({print(input$file1)})
-observe({print(input$action)})
-observeEvent(input$action,{
-  newtab <- c("dashboard")
-  updateTabItems(session, "tabs", newtab)
+observe({print(input$tabs)
+  tabsname <- input$tabs
+  if (tabsname != "import"){
+    return(NULL)}
   output$sidebar <- renderMenu({
     sidebarMenu(
       menuItem(
@@ -24,7 +18,33 @@ observeEvent(input$action,{
     )
   }
   )
+  })
+observe({
+  updateTabItems(session, "tabs", "dashboard")
 })
+observe({print(input$choice)})
+observe({print(input$bichoice)})
+observe({print(input$bislider)})
+observe({print(input$slider)})
+observe({print(input$file1)})
+observe({print(input$action)})
+#observeEvent(input$action,{
+#  newtab <- c("dashboard")
+#  updateTabItems(session, "tabs", newtab)
+#  output$sidebar <- renderMenu({
+#    sidebarMenu(
+#      menuItem(
+#        "Slider",
+#        radioButtons("slider or",
+#                     label = "sliderlabel",
+#                     choices = c("Slider","or"),
+#                     selected = "Slider",
+#                     inline = TRUE)
+#      )
+#    )
+#  }
+#  )
+#})
 
 
 filedata <- reactive({
