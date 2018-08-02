@@ -33,17 +33,17 @@ ui <- dashboardPage(
           actionButton("action", "Bestätigen"),
                   
           menuItem("Import", tabName = "import", icon = icon("upload",lib = 'glyphicon')),
-                    menuItem(wellPanel("upload", tabName = "upload",fileInput("file1", "Import",
-                                                                    accept = c(
-                                                                      "text/comma-separated-values,text/plain",
-                                                                      ".csv",
-                                                                      
-                                                                      ".sav"),
-                                                                    buttonLabel = "Durchsuchen",
-                                                                    placeholder = "keine Datei ausgewählt",
-                                                                    multiple = FALSE
-                    ),
-                    helpText("max. Dateigröße 5MB", tags$br(),"kann über die Option", tags$br(),"options(shiny.maxRequestSize=30*1024^2) geändert werden"))),
+                   # menuItem(wellPanel("upload", tabName = "upload",fileInput("file1", "Import",
+                    #                                                accept = c(
+                     #                                                 "text/comma-separated-values,text/plain",
+                      #                                                ".csv",
+                       #                                               
+                        #                                              ".sav"),
+                         #                                           buttonLabel = "Durchsuchen",
+                          #                                          placeholder = "keine Datei ausgewählt",
+                           #                                         multiple = FALSE
+                    #),
+                    #helpText("max. Dateigröße 5MB", tags$br(),"kann über die Option", tags$br(),"options(shiny.maxRequestSize=30*1024^2) geändert werden"))),
           menuItem("univariate Analyse", tabName = "univariate", icon = icon("th"), selected = TRUE),
           menuItem(wellPanel("Einstellungen", tabName = "einst", sliderInput("slider", "Jahr", min = (2000),max = (2016), sep = "", value = 2000, step = 1, post = " Jahr"),
                                          selectInput("choice","Merkmale auswählen:", multiple = FALSE, choices = "Testauswahl")
@@ -59,15 +59,15 @@ ui <- dashboardPage(
   
    
   body <- dashboardBody(
-       textOutput("text"),
+     #  textOutput("text"),
     tabItems(
-      tabItem(tabName = "dashboard" 
-         #     tabBox(
-          #      title = "Übersicht", width = NULL,
-           #     tabPanel("Aufgabe",h3 ("Aufgabe")),
+      tabItem(tabName = "dashboard", 
+              tabBox(
+                title = "Übersicht", width = NULL,
+               tabPanel("Aufgabe",h3 ("Aufgabe"))
             #    tabPanel("Fragestellung",print(var_sort)),
              #   tabPanel("Datengrundlage", dataTableOutput("zusam"))
-              ),
+              )),
       tabItem(tabName = "import",
 
     tabBox(
