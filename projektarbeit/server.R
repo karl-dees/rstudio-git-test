@@ -4,12 +4,12 @@ server <- function(input, output, session) {
 observe({print(input$tabs)
   tabsname <- input$tabs
   if (tabsname != "import"){
-          return(NULL)
+         return(NULL)
     }
   output$sidebar1 <- renderMenu({
     sidebarMenu(
       menuItem(
-        "Slider",
+        "Slider111",
         radioButtons("slider or",
                      label = "sliderlabel",
                      choices = c("Slider","or"),
