@@ -7,6 +7,10 @@ observe({print(input$bichoice)})
 observe({print(input$bislider)})
 observe({print(input$file1)})
 observe({print(input$action)})
+observeEvent(input$action,{
+  newtab <- c("dashboard")
+  updateTabItems(session, "tabs", newtab)
+})
 
 
 filedata <- reactive({
