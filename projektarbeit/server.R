@@ -4,8 +4,9 @@ server <- function(input, output, session) {
 observe({print(input$tabs)
   tabsname <- input$tabs
   if (tabsname != "import"){
-    return(NULL)}
-  output$sidebar <- renderMenu({
+          return(NULL)
+    }
+  output$sidebar1 <- renderMenu({
     sidebarMenu(
       menuItem(
         "Slider",
