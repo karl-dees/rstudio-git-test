@@ -60,7 +60,7 @@ ui <- dashboardPage(
   
    
   body <- dashboardBody(
-     #  textOutput("text"),
+     textOutput("text"),
     tabItems(
       tabItem(tabName = "dashboard", 
               tabBox(
