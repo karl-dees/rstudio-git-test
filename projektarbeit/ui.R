@@ -27,7 +27,8 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarUserPanel("Karl-Heinz Dees 73304"),
       sidebarMenu(id = "tabs",
-                  menuItemOutput("sidebar"),
+                  sidebarMenuOutput("sidebar1"),
+                  sidebarMenuOutput("sidebar2"),
           menuItem("Übersicht", tabName = "dashboard", icon = 
                      icon("dashboard")),
           actionButton("action", "Bestätigen"),
