@@ -30,6 +30,7 @@ ui <- dashboardPage(
                   
           menuItem("Übersicht", tabName = "dashboard", icon = 
                      icon("dashboard")),
+          actionButton("action", "Bestätigen"),
                   
           menuItem("Import", tabName = "import", icon = icon("upload",lib = 'glyphicon')),
                     menuItem(wellPanel("upload", tabName = "upload",fileInput("file1", "Import",
@@ -58,7 +59,7 @@ ui <- dashboardPage(
   
    
   body <- dashboardBody(
-      # textOutput("text"),
+       textOutput("text"),
     tabItems(
       tabItem("dashboard" 
          #     tabBox(
