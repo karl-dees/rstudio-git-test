@@ -6,9 +6,9 @@ observe({print(input$choice)})
 observe({print(input$bichoice)})
 observe({print(input$bislider)})
 observe({print(input$file1)})
-output$top <- renderMenu({
-  messageItem("User",input$tabs)
-})
+#output$top <- renderMenu({
+#messageItem("User",input$tabs)
+#)
 
 
 filedata <- reactive({

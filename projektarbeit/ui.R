@@ -1,7 +1,7 @@
 ui <- dashboardPage(
   
   header <- dashboardHeader(title = "Projektarbeit BA-AE",
-                            dropdownMenuOutput("top"),
+                          
     dropdownMenu( type = "notifications", 
                   icon = icon("question-circle"),
                   badgeStatus = NULL,
