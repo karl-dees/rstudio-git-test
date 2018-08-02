@@ -61,7 +61,7 @@ ui <- dashboardPage(
   body <- dashboardBody(
        textOutput("text"),
     tabItems(
-      tabItem("dashboard" 
+      tabItem(tabName = "dashboard" 
          #     tabBox(
           #      title = "Übersicht", width = NULL,
            #     tabPanel("Aufgabe",h3 ("Aufgabe")),
@@ -77,15 +77,15 @@ ui <- dashboardPage(
          tabPanel("Zusammenfassung", dataTableOutput("zusam"))
     )
       ),
-    tabItem("univariate" 
+    tabItem(tabName = "univariate" 
             
           #  tabBox(
     #  title = "Sie haben univariate Analyse gewählt", width = NULL,
      # tabPanel("Daten",h3 ("Aufgabe")),
     #  tabPanel("Grafiken",dataTableOutput("tabelle")),
      # tabPanel("Interpretation", dataTableOutput("zusam"))
-    )),
+    ),
     tabItem(tabName = "bivariate", h2 ("bivariate")),
             tabItem(tabName = "Zeitreihenanalyse", h4 ("zeit"), tags$hr(),tags$br(), h3 ("zeit") )
-   ) )
+   ) ))
     
