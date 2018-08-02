@@ -11,6 +11,19 @@ observe({print(input$action)})
 observeEvent(input$action,{
   newtab <- c("dashboard")
   updateTabItems(session, "tabs", newtab)
+  output$sidebar <- renderMenu({
+    sidebarMenu(
+      menuItem(
+        "Slider",
+        radioButtons("slider or",
+                     label = "sliderlabel",
+                     choices = c("Slider","or"),
+                     selected = "Slider",
+                     inline = TRUE)
+      )
+    )
+  }
+  )
 })
 
 
