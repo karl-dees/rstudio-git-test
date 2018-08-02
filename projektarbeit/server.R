@@ -5,6 +5,7 @@ observe({print(input$tabs)})
 observe({print(input$choice)})
 observe({print(input$bichoice)})
 observe({print(input$bislider)})
+observe({print(input$slider)})
 observe({print(input$file1)})
 observe({print(input$action)})
 observeEvent(input$action,{
